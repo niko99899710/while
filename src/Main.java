@@ -41,13 +41,10 @@ public class Main {
             System.out.println("Задача3");
             int population = 12_000_000;
             int fertility = 17;
-// 17 человек на 1000 и 8
             int mortality = 8;
             int year = 0;
-            //int fertilityMortality = (fertility - mortality) * 12000;
-            // int populationGrowth= (fertilityMortality)*12_000;
-            while (year < 10) {
-                population = population + (fertility - mortality) * 12000;
+            while (year <= 10) {
+                population = population + (fertility - mortality) * population/1000;
                 year++;
                 System.out.println("Год " + year + " численность населения составляет " + population);
             }
@@ -59,7 +56,6 @@ public class Main {
             int contribution = 15000;
             int months = 0;
             int i = 1;
-            //int contributionPersent = (contribution * 7) / 100;
             for (; contribution < 12_000_000; i++) {
                 months++;
                 contribution = contribution + (contribution * 7) / 100;
@@ -71,10 +67,9 @@ public class Main {
         System.out.println("Задача5");
             int pay = 15000;
             int percent = 7;
-            int payPercent = (pay * 7) / 100;
             int pMonth = 1;
             for (; pMonth <= 120; pMonth++) {
-                pay = pay + payPercent;
+                pay = pay + (pay * 7) / 100;
                 if (pMonth % 6 == 0) {
                     System.out.println("Месяц " + pMonth + " составил - " + pay);
                 }
@@ -85,10 +80,9 @@ public class Main {
         System.out.println("Задача6");
             int salary = 15000;
             int chek = 7;
-            int salaryChek = (salary * 7) / 100;
             int sMonth = 1;
             for (; sMonth <= 9 * 12; sMonth++) {
-                salary = salary + salaryChek;
+                salary = salary + (salary * 7) / 100;
                 if (sMonth % 6 == 0) {
                     System.out.println("Месяц " + sMonth + " Сумма вклада = " + salary);
                 }
